@@ -1,0 +1,11 @@
+
+
+def build_versions = [:]
+build_versions.android_gradle_plugin = "7.0.1"
+build_versions.kotlin = '1.5.20'
+
+ext.build_versions = build_versions
+
+project.ext{
+    retrofitVersion = "2.4.0"
+}

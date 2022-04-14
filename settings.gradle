@@ -1,0 +1,26 @@
+//pluginManagement {
+//    repositories {
+////        gradlePluginPortal()
+////        google()
+////        mavenCentral()
+//        gradlePluginPortal()
+//        google()
+//        jcenter()
+//        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+//    }
+//}
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+////        google()
+////        mavenCentral()
+//        google()
+//        jcenter()
+//        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+//    }
+//}
+rootProject.name = "Template"
+include ':app'
+include ':common'

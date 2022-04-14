@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <root-path
+        name="root-path"
+        path="" />
+
+    <external-path
+        name="external_storage_root"
+        path="." />
+    <files-path
+        name="files-path"
+        path="." />
+    <cache-path
+        name="cache-path"
+        path="." />
+    <external-files-path
+        name="external_file_path"
+        path="." />
+    <external-cache-path
+        name="external_cache_path"
+        path="." />
+
+<!--    <root-path name="root" path="" /> //代表设备的根目录new File("/");-->
+<!--    <files-path name="files" path="" /> //context.getFilesDir()-->
+<!--    <cache-path name="cache" path="" /> //context.getCacheDir()-->
+
+<!--    <external-path name="external" path="picture" /> //Environment.getExternalStorageDirectory()-->
+<!--    <external-path name="files_root" path="Android/data/包名/" /> //代表的目录即为：Environment.getExternalStorageDirectory()/Android/data/包名/-->
+<!--    <external-path name="external_storage_root" path="." /> //代表的目录即为：Environment.getExternalStorageDirectory()-->
+<!--    <external-path name="external" path="pics" /> //代表的目录即为：Environment.getExternalStorageDirectory()/pics-->
+
+<!--    <external-files-path name="name" path="path" /> //context.getExternalFilesDirs()-->
+<!--    <external-cache-path name="name" path="path" /> //getExternalCacheDirs()-->
+
+</paths>

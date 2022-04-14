@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/shape_rect_3dp_white"
+    android:minWidth="200dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+
+        <com.loong.common.widgets.view.AVLoadingIndicatorView
+            android:id="@+id/loadingView"
+            style="@style/AVLoadingIndicatorView.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/loadingMessageTv"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:singleLine="true"
+        android:textSize="14dp" />
+</LinearLayout>
+
+
