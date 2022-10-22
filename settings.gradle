@@ -1,26 +1,23 @@
-//pluginManagement {
-//    repositories {
-////        gradlePluginPortal()
-////        google()
-////        mavenCentral()
-//        gradlePluginPortal()
-//        google()
-//        jcenter()
-//        mavenCentral()
-//        maven { url 'https://jitpack.io' }
-//    }
-//}
-//dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-////        google()
-////        mavenCentral()
-//        google()
-//        jcenter()
-//        mavenCentral()
-//        maven { url 'https://jitpack.io' }
-//    }
-//}
-rootProject.name = "Template"
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "CommonLib"
 include ':app'
 include ':common'

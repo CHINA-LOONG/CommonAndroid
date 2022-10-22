@@ -14,7 +14,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // 基础配置
-        buildConfigField('String', 'BASE_URL', '"接口基础域名"')
+        buildConfigField('String', 'BASE_URL', '"http://www.baidu.com/修改根地址/"')
         // OOS配置
         buildConfigField('String', 'OSS_ACCESS_KEY_ID', '"XXXX"')
         buildConfigField('String', 'OSS_ACCESS_KEY_SECRET', '"XXXXXXX"')
@@ -78,7 +78,7 @@ android {
         }
         local {
             dimension 'version'
-            buildConfigField('String', 'BASE_URL', '"接口基础域名"')
+            buildConfigField('String', 'BASE_URL', '"http://www.baidu.com/接口基础域名/"')
             manifestPlaceholders = [UPDATE_URL: "更新的域名地址", UPDATE_APPID: "更新使用的APPID"]
         }
     }

@@ -12,8 +12,6 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -57,11 +55,18 @@ dependencies {
     // Retrofit是Square公司开发的一款针对Android网络请求的框架，Retrofit2底层基于OkHttp实现的
     // RxJava是一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库
     api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    // 模拟web服务器，用于模拟来自服务器的HTTP响应，并模拟网络行为
+    // A mock web server for mocking HTTP responses from a server, and simulating network behaviour
     api "com.squareup.retrofit2:retrofit-mock:$rootProject.retrofitVersion"
+    // 一个使用Gson进行JSON序列化的转换器   可以传递给GsonConverterFactory
+    // A Converter which uses Gson for serialization to and from JSON
     api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    // 一个转换器，支持将字符串和原语及其装箱类型转换为文本/普通体。
+    // A Converter which supports converting strings and both primitives and their boxed types to text/plain bodies
     api "com.squareup.retrofit2:converter-scalars:$rootProject.retrofitVersion"
+    // 适配RxJava 2.x类型的适配器
+    // An Adapter for adapting RxJava 2.x types
     api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
-    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
 
     api 'com.squareup.okhttp3:logging-interceptor:3.14.8'
 
