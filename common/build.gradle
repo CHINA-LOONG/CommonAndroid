@@ -1,10 +1,16 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 //
 //    id 'kotlin-android'
 //    id 'kotlin-parcelize'
 //    id 'kotlin-android-extensions'
 }
+
+
+
+group = 'com.github.jitpack'
+version = '1.0'
 
 android {
     compileSdk 31
@@ -135,3 +141,18 @@ dependencies {
     api 'com.aliyun.dpa:oss-android-sdk:2.9.5'
 }
 
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.jitpack'
+                artifactId = 'android-example'
+                version = '1.0'
+            }
+        }
+    }
+}
