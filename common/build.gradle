@@ -150,7 +150,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.gitee.loong-gitee'
-                artifactId = 'android-example'
+                artifactId = 'common-android'
                 version = '1.0'
             }
         }
