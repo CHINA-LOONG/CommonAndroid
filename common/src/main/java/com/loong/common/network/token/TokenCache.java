@@ -1,4 +1,4 @@
-package com.loong.common.network;
+package com.loong.common.network.token;
 
 import com.loong.common.utils.SPUtils;
 

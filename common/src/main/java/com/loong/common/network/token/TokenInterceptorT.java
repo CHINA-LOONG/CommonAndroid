@@ -1,10 +1,9 @@
-package com.loong.common.network;
+package com.loong.common.network.token;
 
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.loong.common.bean.BaseBeanT;
-import com.loong.common.bean.TokenBean;
+import com.loong.common.network.bean.ITokenResult;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -17,14 +16,15 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class TokenInterceptor implements Interceptor {
+public class TokenInterceptorT<T extends ITokenResult> implements Interceptor {
 
+    // token失效需要重新刷新
     private static int UNAUTHORIZED = 401;
 
     private String BASE_URL ="";
     private String REFRESH_URL = "";
 
-    public TokenInterceptor(String baseUrl,String refrshUrl){
+    public TokenInterceptorT(String baseUrl, String refrshUrl){
         BASE_URL = baseUrl;
         REFRESH_URL = refrshUrl;
     }
@@ -33,7 +33,7 @@ public class TokenInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request.Builder request = chain.request().newBuilder();
         //添加Token请求头 这里的token应当是从本地数据库中读取的 **********
-        if (chain.request().url().toString().contains("refreshToken")) {
+        if (chain.request().url().toString().contains(REFRESH_URL)) {
             request.addHeader(TokenCache.HEADER_TOKEN_JAVA, TokenCache.getInstance().getRefreshToken());
             request.addHeader(TokenCache.HEADER_TOKEN_PHP, TokenCache.getInstance().getRefreshToken());
         } else {
@@ -83,16 +83,16 @@ public class TokenInterceptor implements Interceptor {
         Request request = new Request.Builder()
                 .header(TokenCache.HEADER_TOKEN_JAVA,TokenCache.getInstance().getRefreshToken())
                 .header(TokenCache.HEADER_TOKEN_PHP,TokenCache.getInstance().getRefreshToken())
-                .url(BASE_URL+"/psdog/api/system/refreshToken")
+                .url(BASE_URL+REFRESH_URL)
                 .build();
         Call call =  okHttpClient.newCall(request);
         String string = Objects.requireNonNull(call.execute().body()).string();
-        Type type = new TypeToken<BaseBeanT<TokenBean>>(){}.getType();
-        BaseBeanT<TokenBean> data = new Gson().fromJson(string,type);
-        if (data.getStatus()==200){
-            TokenCache.getInstance().setToken(data.getData().getToken());
-            TokenCache.getInstance().setRefreshToken(data.getData().getRefreshToken());
-            return data.getData().getToken();
+        Type type = new TypeToken<T>(){}.getType();
+        T data = new Gson().fromJson(string,type);
+        if (data.getCode()==200){
+            TokenCache.getInstance().setToken(data.getToken());
+            TokenCache.getInstance().setRefreshToken(data.getRefreshToken());
+            return data.getToken();
         }
         return null;
     }

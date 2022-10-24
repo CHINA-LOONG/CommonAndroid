@@ -13,7 +13,7 @@ import com.google.gson.Gson;
  * @author : xuelong
  * @e-mail : xuelong9009@qq.com
  * @date : 2020/5/10 12:29
- * @desc :
+ * @desc : 已启用,请使用后SPUtils
  */
 public class SharedPreferencesUtil {
     private static SharedPreferencesUtil mInstance;

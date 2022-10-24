@@ -8,8 +8,7 @@ plugins {
 }
 
 
-
-group = 'com.github.jitpack'
+group = 'com.gitee.loong-gitee'
 version = '1.0'
 
 android {
@@ -60,6 +59,7 @@ dependencies {
 
     // Retrofit是Square公司开发的一款针对Android网络请求的框架，Retrofit2底层基于OkHttp实现的
     // RxJava是一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库
+
     api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     // 模拟web服务器，用于模拟来自服务器的HTTP响应，并模拟网络行为
     // A mock web server for mocking HTTP responses from a server, and simulating network behaviour
@@ -149,7 +149,7 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.jitpack'
+                groupId = 'com.gitee.loong-gitee'
                 artifactId = 'android-example'
                 version = '1.0'
             }

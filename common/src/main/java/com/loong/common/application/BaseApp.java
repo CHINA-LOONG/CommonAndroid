@@ -37,8 +37,6 @@ public class BaseApp extends Application {
         } else {
             Timber.plant(new CrashReportingTree());
         }
-        // SharedPreferences初始化
-        SharedPreferencesUtil.init(getApplicationContext());
 
         registerActivityLifecycleCallbacks(ActivityManager.getInstance());
 

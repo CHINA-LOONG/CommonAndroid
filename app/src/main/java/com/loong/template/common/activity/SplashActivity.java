@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import com.gyf.immersionbar.BarHide;
 import com.gyf.immersionbar.ImmersionBar;
 import com.loong.common.base.presenter.BasePresenterActivity;
-import com.loong.common.network.TokenCache;
+import com.loong.common.network.token.TokenCache;
 import com.loong.common.utils.UIUtil;
 import com.loong.template.common.bean.UserInfoBean;
 import com.loong.template.common.persenter.CommonPresenter;
