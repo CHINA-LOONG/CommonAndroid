@@ -4,6 +4,7 @@ import com.loong.common.network.token.TokenInterceptor;
 
 import java.security.KeyStore;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +40,7 @@ public class MultiNetworkManager {
         return mInstance;
     }
 
-    private static Map<String, Retrofit> retrofitMap;
+    private static Map<String, Retrofit> retrofitMap = new HashMap<>();
 
     /**
      * 初始化网络服务
