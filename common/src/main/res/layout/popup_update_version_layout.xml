@@ -24,8 +24,8 @@
                 android:layout_height="20dp"
                 android:layout_gravity="right"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/picture_icon_close"
-                android:visibility="visible"
+                android:src="@drawable/common_close"
+                android:visibility="gone"
                 app:tint="@color/color_black" />
 
             <ImageView

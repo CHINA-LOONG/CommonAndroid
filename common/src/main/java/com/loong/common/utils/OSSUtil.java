@@ -111,7 +111,7 @@ public class OSSUtil {
         if (media instanceof LocalMedia) {
             path = ((LocalMedia) media).getCutPath();
             if (TextUtils.isEmpty(path)) {
-                path = ((LocalMedia) media).getAndroidQToPath();
+                path = ((LocalMedia) media).getCompressPath();
             }
             if (TextUtils.isEmpty(path)) {
                 path = ((LocalMedia) media).getRealPath();
