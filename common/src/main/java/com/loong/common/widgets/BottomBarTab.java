@@ -45,6 +45,8 @@ public class BottomBarTab extends FrameLayout {
     private Context mContext;
     private int mTabPosition = -1;
 
+    private String titleColor = "#111111";
+
     private @DrawableRes
     int selectIcon;
     private @DrawableRes
@@ -56,15 +58,20 @@ public class BottomBarTab extends FrameLayout {
     private boolean isAnimationPlaying = false;
 
     public BottomBarTab(Context context, @DrawableRes int[] icon, CharSequence title) {
-        this(context, null, icon, title);
+        this(context, null, icon, title, "#111111");
     }
 
-    public BottomBarTab(Context context, AttributeSet attrs, int[] icon, CharSequence title) {
-        this(context, attrs, 0, icon, title);
+    public BottomBarTab(Context context, @DrawableRes int[] icon, CharSequence title, String normalColor) {
+        this(context, null, icon, title, normalColor);
     }
 
-    public BottomBarTab(Context context, AttributeSet attrs, int defStyleAttr, int[] icon, CharSequence title) {
+    public BottomBarTab(Context context, AttributeSet attrs, int[] icon, CharSequence title, String normalColor) {
+        this(context, attrs, 0, icon, title, normalColor);
+    }
+
+    public BottomBarTab(Context context, AttributeSet attrs, int defStyleAttr, int[] icon, CharSequence title, String normalColor) {
         super(context, attrs, defStyleAttr);
+        this.titleColor = normalColor;
         init(context, icon, title);
     }
 
@@ -96,6 +103,7 @@ public class BottomBarTab extends FrameLayout {
         int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 23, getResources().getDisplayMetrics());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
         mIcon.setImageResource(normalIcon);
+        mIcon.setColorFilter(Color.parseColor(titleColor));
         mIcon.setLayoutParams(params);
         lLContainer.addView(mIcon);
 
@@ -104,7 +112,7 @@ public class BottomBarTab extends FrameLayout {
         LinearLayout.LayoutParams paramsTv = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsTv.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
         mTvTitle.setTextSize(11);
-        mTvTitle.setTextColor(Color.parseColor("#111111"));
+        mTvTitle.setTextColor(Color.parseColor(titleColor));
         mTvTitle.setLayoutParams(paramsTv);
         lLContainer.addView(mTvTitle);
 
@@ -137,8 +145,8 @@ public class BottomBarTab extends FrameLayout {
             mTvTitle.setTextColor(getResources().getColor(R.color.colorPrimary));
         } else {
             mIcon.setImageResource(normalIcon);
-            mIcon.setColorFilter(Color.parseColor("#999999"));
-            mTvTitle.setTextColor(Color.parseColor("#999999"));
+            mIcon.setColorFilter(Color.parseColor(titleColor));
+            mTvTitle.setTextColor(Color.parseColor(titleColor));
         }
     }
 
