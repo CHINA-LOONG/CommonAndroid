@@ -101,8 +101,6 @@ public class ByWebView {
         ws.setSupportZoom(true);
         ws.setBuiltInZoomControls(true);
         ws.setDisplayZoomControls(false);
-        // 启动应用缓存
-        ws.setAppCacheEnabled(true);
         // 设置缓存模式
         ws.setCacheMode(WebSettings.LOAD_DEFAULT);
         // setDefaultZoom  api19被弃用

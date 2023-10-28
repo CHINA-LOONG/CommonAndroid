@@ -12,12 +12,12 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
-        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://jitpack.io' }
+        maven("https://s01.oss.sonatype.org/content/groups/public")
+        maven("https://maven.aliyun.com/repository/public")
+        maven("https://jitpack.io")
     }
 }
 
 rootProject.name = "CommonLib"
-include ':app'
-include ':common'
+include(":app")
+include("common")
